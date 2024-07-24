@@ -1,0 +1,193 @@
+{
+	"info": {
+		"_postman_id": "0d18542c-a126-4cbb-ab0d-ca8a13106647",
+		"name": "smartworks service v3 stage1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "18169758",
+		"_collection_link": "https://winter-firefly-194965.postman.co/workspace/1st-Workspace~d4f8630d-5ce6-4394-95af-265dd36f2ccb/collection/18169758-0d18542c-a126-4cbb-ab0d-ca8a13106647?action=share&source=collection_link&creator=18169758"
+	},
+	"item": [
+		{
+			"name": "Create User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "78ac872e-6bef-444c-bc44-4acf651fe836"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"companyId\": \"202\",\n    \"locationId\": \"40\",\n    \"name\": \"testuser3600\",\n    \"email\": \"testuser0388@yopmail.com\",\n    \"role\": \"end_user\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://0v8sntyvta.execute-api.ap-south-1.amazonaws.com/stage1/smartWorksService/v3/createUser"
+			},
+			"response": []
+		},
+		{
+			"name": "Update User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "78ac872e-6bef-444c-bc44-4acf651fe836"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"companyId\": \"202\",\n  \"email\": \"testuser0388@yopmail.com\",\n  \"role\": \"admin\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://0v8sntyvta.execute-api.ap-south-1.amazonaws.com/stage1/smartWorksService/v3/updateUser"
+			},
+			"response": []
+		},
+		{
+			"name": "updating new access point",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "78ac872e-6bef-444c-bc44-4acf651fe836"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"companyId\":\"202\",\n\"email\":\"testuser0388@yopmail.com\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://0v8sntyvta.execute-api.ap-south-1.amazonaws.com/stage1/smartWorksService/v3/assignNewAccessPoint"
+			},
+			"response": []
+		},
+		{
+			"name": "create Location",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "78ac872e-6bef-444c-bc44-4acf651fe836"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"Victoria Park\",\n  \"location\": \"Victoria Park\",\n  \"locationId\": \"9\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://0v8sntyvta.execute-api.ap-south-1.amazonaws.com/stage1/smartWorksService/v3/createLocation"
+			},
+			"response": []
+		},
+		{
+			"name": "create Company",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "78ac872e-6bef-444c-bc44-4acf651fe836"
+					}
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"companyName\": \"Tenant_Test_52\",\n    \"companyId\": \"6003974\",\n    \"locationIds\": [\n        \"40\"\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://0v8sntyvta.execute-api.ap-south-1.amazonaws.com/stage1/smartWorksService/v3/createCompany"
+			},
+			"response": []
+		},
+		{
+			"name": "addLocationToCompany",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "78ac872e-6bef-444c-bc44-4acf651fe836"
+					}
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "78ac872e-6bef-444c-bc44-4acf651fe836",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"companyId\": \"6003974\",\n    \"locationIds\": [\n        \"9\"\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://0v8sntyvta.execute-api.ap-south-1.amazonaws.com/stage1/smartWorksService/v3/addLocationToCompany"
+			},
+			"response": []
+		},
+		{
+			"name": "delete Users",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "78ac872e-6bef-444c-bc44-4acf651fe836"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"companyId\": \"202\",\n    \"emails\": [\n        \"testuser0388@yopmail.com\"\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://0v8sntyvta.execute-api.ap-south-1.amazonaws.com/stage1/smartWorksService/v3/deleteUsers"
+			},
+			"response": []
+		}
+	]
+}
